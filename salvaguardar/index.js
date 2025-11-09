@@ -10,9 +10,10 @@ connectDB();
 
 // Importar el CRUD de juegos
 import routes from './juegos.js';
-
+import reseñasRoutes  from './reseñas.js';
 // Usar la ruta principal
 app.use('/api/juegos', routes);
+app.use('api/reseñas', reseñasRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
