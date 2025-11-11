@@ -135,4 +135,4 @@ router.delete('/:id', async (req, res) => {
 });
 
 // Exportamos el router para usarlo en el index.js
-export default reseñasRoutes;
+export default router;
