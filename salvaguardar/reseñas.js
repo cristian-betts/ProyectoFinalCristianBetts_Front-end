@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 const router = express.Router();
 
 // Importamos el modelo de Juego para relacionarlo
-import Juego from './juegos.js';
+import Juego from './modeloJuego.js';
 
 // Definimos el esquema de las reseñas
 const resenaSchema = new mongoose.Schema({
@@ -50,7 +50,7 @@ resenaSchema.pre('save', function (next) {
 });
 
 // Creamos el modelo
-const Reseña = mongoose.model('Resena', resenaSchema);
+const Resena = mongoose.model('Resena', resenaSchema);
 
 /*CRUD DE RESEÑAS*/
 
@@ -124,7 +124,7 @@ router.put('/:id', async (req, res) => {
 //Eliminar una reseña
 router.delete('/:id', async (req, res) => {
   try {
-    const resenaEliminada = await Reseña.findByIdAndDelete(req.params.id);
+    const resenaEliminada = await Resena.findByIdAndDelete(req.params.id);
     if (!resenaEliminada) {
       return res.status(404).json({ mensaje: 'Reseña no encontrada' });
     }
