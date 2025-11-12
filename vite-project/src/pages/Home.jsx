@@ -2,7 +2,7 @@
 function Home() {
   return (
     <section>
-      <h2>Bienvenido a GameTracker</h2>
+      <h1>Bienvenido a GameTracker</h1>
       <p>Aquí podrás ver y gestionar todos tus videojuegos.</p>
 
       {/* Aquí más adelante irán las tarjetas de los juegos */}
@@ -10,7 +10,7 @@ function Home() {
         <p>Pronto verás tus juegos aquí...</p>
       </div>
     </section>
-  );
+  ); 
 }
 export default Home;
 

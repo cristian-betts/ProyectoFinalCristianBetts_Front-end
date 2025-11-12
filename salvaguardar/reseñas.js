@@ -23,11 +23,11 @@ const reseñaSchema = new mongoose.Schema({
   },
   horasJugadas: {
     type: Number,
-    required: false
+    required: true
   },
   dificultad: {
     type: String,
-    required: false
+    required: true
   },
   recomendaria: {
     type: Boolean,
@@ -69,7 +69,7 @@ router.post('/', async (req, res) => {
       textoReseña,
       horasJugadas,
       dificultad,
-      recomendaria
+      recomendaria,
     });
     await nuevaReseña.save();
     res.status(201).json(nuevaReseña);

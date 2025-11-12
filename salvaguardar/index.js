@@ -13,7 +13,7 @@ import routes from './juegos.js';
 import router  from './reseñas.js';
 // Usar la ruta principal
 app.use('/api/juegos', routes);
-app.use('api/reseñas', router);
+app.use('/api/reseñas', router);
 
 const PORT = 3000;
 app.listen(PORT, () => {
