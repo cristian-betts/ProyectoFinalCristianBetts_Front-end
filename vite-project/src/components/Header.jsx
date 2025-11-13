@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
         <h1>🎮 GameTracker</h1>
       </div>
 
-      <nav className={`nav ${menuOpen ? "open" : ""}`}>
+      <nav className={`nav ${menuOpen ? "open" : ""}`} >
         <ul>
           <Link to="/">Inicio</Link>
           <Link to="/reseñas">Reseñas</Link>

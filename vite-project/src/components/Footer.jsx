@@ -4,8 +4,8 @@ function Footer() {
       <p><strong>Creado por:</strong> Cristian David Betts Sarmiento</p>
       <p>
         <strong>Correos:</strong> 
-        <a href="mailto:cristiandavid.betts@gmail.com"> cdbettss@gmail.com</a> |
-        <a href="mailto:cristianbetts.dev@gmail.com"> cbettss@unicartagena.edu.co</a>
+        <a href="mailto:cdbettss@gmail.com"> cdbettss@gmail.com</a> |
+        <a href="mailto:cbettss@unicartagena.edu.co"> cbettss@unicartagena.edu.co</a>
       </p>
       <p>
         <strong>Teléfonos:</strong> 
