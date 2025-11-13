@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="footer">
-      <p><strong>Creado por:</strong> Cristian David Betts Sarmiento</p>
+      <p><strong>Creado por:</strong> Cristian David Betts Sarmiento 🎮</p>
       <p>
         <strong>Correos:</strong> 
         <a href="mailto:cdbettss@gmail.com"> cdbettss@gmail.com</a> |

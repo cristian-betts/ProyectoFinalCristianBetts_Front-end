@@ -22,12 +22,12 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1>Juegos disponibles</h1>
+      <h1>🎮 Biblioteca Gamer</h1>
       <div className="game-grid">
         {juegos.length > 0 ? (
           juegos.map((juego) => (
             <GameCard
-              key={juego._id}
+              id={juego._id}
               titulo={juego.titulo}
               genero={juego.genero}
               descripcion={juego.descripcion}

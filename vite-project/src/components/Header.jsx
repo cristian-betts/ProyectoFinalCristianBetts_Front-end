@@ -15,9 +15,9 @@ const Header = () => {
       <nav className={`nav ${menuOpen ? "open" : ""}`} >
         <ul>
           <Link to="/">Inicio</Link>
-          <Link to="/reseñas">Reseñas</Link>
-          <Link to="/añadir-juego">Añadir Juego</Link>
-          <Link to="/añadir-reseña">Añadir Reseña</Link>
+          <Link to="/reviews">Reseñas</Link>
+          <Link to="/addGame">Añadir Juego</Link>
+          <Link to="/addReview">Añadir Reseña</Link>
           <Link to="/dashboard">Dashboard</Link>
         </ul>
       </nav>
