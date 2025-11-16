@@ -48,28 +48,34 @@ const GameForm = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     if (!id) return alert("Por favor, ingresa el ID del juego a actualizar");
-
-    //objeto con los datos actualizados, manteniendo los existentes
-    const actualizarJuego = {
-      titulo: titulo || juego.titulo,
-      genero: genero || juego.titulo,
-      añoLanzamiento: añoLanzamiento || juego.añoLanzamiento,
-      desarrollador: desarrollador || juego.desarrollador,
-      descripcion: descripcion || juego.descripcion,
-      imagenPortada: imagenPortada || juego.imagenPortada,
-      completado: completado !== undefined ? completado: juego.completado
-    };
+    setTitulo(titulo);
+    setGenero(genero);
+    setPlataforma(plataforma);
+    setAñoLanzamiento(añoLanzamiento);
+    setDesarrollador(desarrollador);
+    setDescripcion(descripcion);
+    setImagenPortada(imagenPortada);
+    setCompletado(completado);
 
     try {
       const res = await fetch(`${apiUrl}/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(actualizarJuego),
+        body: JSON.stringify({
+          titulo,
+          genero,
+          añoLanzamiento,
+          desarrollador,
+          descripcion,
+          imagenPortada,
+          completado
+        }),
       });
 
       const data = await res.json();
       alert(`Juego actualizado: ${data.titulo}`);
       limpiarCampos();
+      setJuego(data);
     } catch (error) {
       console.error("Error al actualizar el juego:", error);
     }
