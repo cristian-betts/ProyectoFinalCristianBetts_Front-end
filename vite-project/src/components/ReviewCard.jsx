@@ -1,7 +1,18 @@
 import React from "react";
 import '../App.css';
+import { useNavigate } from "react-router-dom";
 
 function ReviewCard({ _id, juegoId, idJuego, textoReseña, puntuacion, dificultad, horasJugadas, recomendaria, fechaCreacion }) {
+    const navigate = useNavigate();
+    const handleDelete = async (_id) => {
+  try {
+    await fetch(`http://localhost:3000/api/resenas/${_id}`, { method: "DELETE" } );
+    alert("Reseña eliminado correctamente");
+    window.location.reload();
+  } catch (error) {
+    console.error("Error al eliminar:", error);
+  }
+};
 return (
 <div className="review-card">
 <p className="review-game">Id de la reseña: {_id}</p>
@@ -20,8 +31,8 @@ Recomendaría: {recomendaria ? "Sí" : "No"}
 </p>
 <p className="review-date">Fecha: {fechaCreacion}</p>
 <div className="review-buttons">
-<button className="btn-edit-review">Editar</button>
-<button className="btn-delete-review">Eliminar</button>
+<button className="btn-edit-review" onClick={() => navigate(`/addReview`)}>Editar</button>
+<button className="btn-delete-review" onClick={() => handleDelete(_id)}>Eliminar</button>
 </div>
 </div>
 );

@@ -37,7 +37,7 @@ puntuacion={Resena.puntuacion}
 textoReseña={Resena.textoReseña}
 horasJugadas={Resena.horasJugadas}
 recomendaria={Resena.recomendaria}
-fechaCreacion={Resena.fechaCreacion}
+fechaCreacion={Resena.fechaCreacion} 
 dificultad={Resena.dificultad}
 />
 ))

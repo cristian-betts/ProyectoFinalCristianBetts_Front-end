@@ -659,3 +659,166 @@ font-size: 16px;
     letter-spacing: 2px;
     width: 100%;
 }
+
+/* Contenedor principal */
+.review-form-container {
+  width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(180deg, #0b0f1e, #0d1a2b);
+  border: 2px solid #0ef;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #0ef;
+  font-family: 'Orbitron', sans-serif;
+  color: #e0e8ff;
+  text-align: center;
+}
+
+/* Título */
+.review-form-title {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #0ef;
+  text-shadow: 0 0 10px #0ef;
+}
+
+/* Formulario */
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Grupo de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #a7baff;
+  font-size: 14px;
+}
+
+/* INPUT y SELECT estilos */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: #0a1424;
+  border: 1px solid #0ef;
+  padding: 10px;
+  border-radius: 8px;
+  color: #e0e8ff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 8px #0ef;
+  border-color: #0ef;
+}
+
+/* Textarea más grande */
+.form-group textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* Checkbox */
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Estrellas de puntuación */
+.stars-container {
+  display: flex;
+  gap: 8px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.star {
+  color: #555; /* estrellas vacías */
+  transition: 0.2s;
+}
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+/* Estrella llena en dorado */
+.star.filled {
+  color: gold;
+  text-shadow: 0 0 10px gold;
+}
+
+/* Botón principal */
+.submit-btn {
+  background: #0ef;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background: #07b9d4;
+  box-shadow: 0 0 10px #0ef;
+}
+
+/* ================================ */
+/* Estilos para DashboardStats */
+/* ================================ */
+
+.dashboard-grid {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.dashboard-card {
+  border-radius: 1rem;
+  background-color: #111111;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  color: white;
+  padding: 1.5rem;
+}
+
+.dashboard-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-value {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.export-container {
+  grid-column: span 3;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.export-button {
+  background-color: #6b21a8;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: 0.2s;
+}
+
+.export-button:hover {
+  background-color: #581c87;
+}
