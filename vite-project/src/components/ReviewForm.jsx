@@ -68,15 +68,7 @@ const ReviewForm = () => {
       const res = await fetch(`http://localhost:3000/api/resenas/${_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-           _id,
-           juegoId,
-           puntuacion,
-           textoReseña,
-           horasJugadas,
-           dificultad,
-           recomendaria,
-        }),
+        body: JSON.stringify(nuevaReseña),
       });
 
       const data = await res.json();
@@ -191,10 +183,10 @@ const ReviewForm = () => {
           />
         </div>
 
-        <button type="submit" className="submit-btn" onClick={handleSubmit}>
+        <button type="button" className="submit-btn" onClick={handleSubmit}>
           Guardar Reseña
         </button>
-        <button type="submit" className="submit-btn" onClick={handleUpdate}>
+        <button type="button" className="submit-btn" onClick={handleUpdate}>
           Actualizar Reseña
         </button>
       </form>

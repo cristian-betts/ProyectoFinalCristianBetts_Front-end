@@ -7,17 +7,17 @@ export default function DashboardStats() {
     totalResenas: 0,
     promedioPuntuacion: 0,
     recomendados: 0,
-    dificultadPromedio: 0,
     horasTotales: 0,
+    promedioHoras: 0
   });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const juegosRes = await fetch("/api/juegos");
+        const juegosRes = await fetch("http://localhost:3000/api/juegos");
         const juegos = await juegosRes.json();
 
-        const resenasRes = await fetch("/api/resenas");
+        const resenasRes = await fetch("http://localhost:3000/api/resenas");
         const resenas = await resenasRes.json();
 
         const totalJuegos = juegos.length;
@@ -28,18 +28,19 @@ export default function DashboardStats() {
 
         const recomendados = resenas.filter((r) => r.recomendaria).length;
 
-        const dificultadPromedio = totalResenas > 0
-          ? (resenas.reduce((acc, r) => acc + r.dificultad, 0) / totalResenas).toFixed(1)
+        const horasTotales = resenas.reduce((acc, r) => acc + r.horasJugadas, 0);
+
+        const promedioHoras = totalResenas > 0
+          ? (resenas.reduce((acc, r) => acc + r.horasJugadas, 0) / totalResenas).toFixed(2)
           : 0;
 
-        const horasTotales = resenas.reduce((acc, r) => acc + r.horasJugadas, 0);
 
         setStats({
           totalJuegos,
           totalResenas,
           promedioPuntuacion,
           recomendados,
-          dificultadPromedio,
+          promedioHoras,
           horasTotales,
         });
       } catch (error) {
@@ -74,13 +75,13 @@ export default function DashboardStats() {
       </div>
 
       <div className="dashboard-card">
-        <h2 className="dashboard-title">Dificultad Promedio</h2>
-        <p className="dashboard-value">{stats.dificultadPromedio}</p>
-      </div>
-
-      <div className="dashboard-card">
         <h2 className="dashboard-title">Horas Totales Jugadas</h2>
         <p className="dashboard-value">{stats.horasTotales}</p>
+      </div>
+
+       <div className="dashboard-card">
+        <h2 className="dashboard-title"> Promedio de horas jugadas</h2>
+        <p className="dashboard-value">{stats.promedioHoras}</p>
       </div>
 
     </div>
